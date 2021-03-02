@@ -23,6 +23,21 @@ type ExampleReply struct {
 }
 
 // Add your RPC definitions here.
+type SendTaskArgs struct {}
+
+type SendTaskReply struct {
+	TaskType string // Map || Reduce
+	FileName string
+	PartitionCount int // the number of partitions in Map and partition index in Reduce :P
+}
+
+type SignalTaskDoneArgs struct {
+	TaskType string
+	FileName string
+	PartitionCount int
+}
+
+type SignalTaskDoneReply struct {}
 
 
 // Cook up a unique-ish UNIX-domain socket name
